@@ -1,0 +1,53 @@
+  <!--Main wrapper-->
+  <div id="main-wrapper">
+
+    <!--Nav header-->
+    <app-nav-header></app-nav-header>
+
+    <!--Header-->
+    <app-header></app-header>
+    
+    <!--Sidebar-->
+    <app-sidebar-student></app-sidebar-student>
+    
+    <!--Content body-->
+    <div class="content-body grid-container">
+    <div class="container-fluid">
+      <div class="table-responsive">
+        <div class="table-wrapper">
+          <div class="table-title">
+            <div class="row">
+              <div class="col-sm-6">
+                <h4>Thời Khóa Biểu</h4>
+              </div>
+            </div>
+          </div>
+          <table class="table table-striped table-hover table-bordered table-content">
+            <thead>
+              <tr class="center-align">
+                <th>Thứ</th>
+                <th>Giờ</th>
+                <th>Mã Lớp</th>
+                <th>Mã Môn</th>
+                <th>Tên Môn</th>
+              </tr>
+            </thead>
+            <tbody> 
+              <tr class="center-align" *ngFor="let lophocphan of lophocphans" >
+                <td>{{lophocphan.thu}}</td>
+                <td>{{lophocphan.gio}}</td>
+                <td>{{ lophocphan.maLHP }}</td>
+                <td>{{ lophocphan.maMH }}</td>
+                <td>{{ lophocphan.tenMH }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    </div>
+  
+    <!--Footer-->
+    <app-footer></app-footer>
+    
+</div>

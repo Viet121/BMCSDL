@@ -1,0 +1,60 @@
+<!--Main wrapper-->
+<div id="main-wrapper">
+
+    <!--Nav header-->
+    <app-nav-header></app-nav-header>
+
+    <!--Header-->
+    <app-header></app-header>
+
+    <!--Sidebar-->
+    <app-sidebar></app-sidebar>
+    
+    <!--Content body-->
+        <div class="content-body ">
+        <div class="container-fluid">
+            <h1 style="font-size: 40px; font-family: 'Arial', sans-serif; text-align: center;">Thông tin sinh viên</h1>
+            <form #from="ngForm">
+                <div class="form-group">
+                    <label for="masv">Mã sinh viên</label>
+                    <input type="text" id="masv" class="form-control" name="masv" [(ngModel)]="sinhvienDetails.maSV" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="hoten">Họ tên sinh viên</label>
+                    <input type="text" id="hoten" class="form-control" name="hoten" [(ngModel)]="sinhvienDetails.tenSV" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="ngaysinh">Ngày sinh</label>
+                    <input id="ngaysinh" class="form-control" name="ngaysinh" value="{{ sinhvienDetails.ngaySinh | date:'dd/MM/yyyy' }}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="ngaysinh">Giới tính</label>
+                    <input id="gioiT" name="gioiT" class="form-control" [(ngModel)]="sinhvienDetails.gioiTinh" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="sdt">Số điện thoại</label>
+                    <input type="text" id="sdt" class="form-control" name="sdt" [(ngModel)]="sinhvienDetails.sdt" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="diachi">Địa chỉ</label>
+                    <input type="text" id="diachi" class="form-control" name="diachi" [(ngModel)]="sinhvienDetails.diaChi" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="namnh">Năm nhập học</label>
+                    <input type="text" id="namnh" class="form-control" name="namnh" [(ngModel)]="sinhvienDetails.namNhapH"
+                    value="2021" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="mactdt">Mã chương trình đào tạo</label>
+                    <input type="text" id="mactdt" class="form-control" name="mactdt" [(ngModel)]="sinhvienDetails.maCTDT"
+                    value="CNTT_47" readonly>
+                </div>
+            </form>
+            <br>
+        </div>
+        </div>
+    <!--Footer-->
+    <app-footer></app-footer>
+  
+</div> 

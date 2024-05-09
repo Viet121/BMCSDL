@@ -1,0 +1,50 @@
+<!--Main wrapper-->
+<div id="main-wrapper">
+
+    <!--Nav header-->
+    <app-nav-header></app-nav-header>
+
+    <!--Header-->
+    <app-header></app-header>
+
+    <!--Sidebar-->
+    <app-sidebar></app-sidebar>
+    
+    <!--Content body-->
+        <div class="content-body">
+        <div class="container-fluid">
+            <h1 style="font-size: 40px; font-family: 'Arial', sans-serif; text-align: center;">Thông tin giáo viên</h1>
+            <form #from="ngForm">
+                <div class="form-group">
+                    <label for="masv">Mã giáo viên</label>
+                    <input type="text" id="masv" class="form-control" name="masv" [(ngModel)]="giaovienDetails.maGV" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="hoten">Họ tên giáo viên</label>
+                    <input type="text" id="hoten" class="form-control" name="hoten" [(ngModel)]="giaovienDetails.tenGV" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="ngaysinh">Ngày sinh</label>
+                    <input id="ngaysinh" class="form-control" name="ngaysinh" value="{{ giaovienDetails.ngaySinh | date:'dd/MM/yyyy' }}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="ngaysinh">Giới tính</label>
+                    <input id="gioiT" name="gioiT" class="form-control" [(ngModel)]="giaovienDetails.gioiTinh" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="sdt">Số điện thoại</label>
+                    <input type="text" id="sdt" class="form-control" name="sdt" [(ngModel)]="giaovienDetails.sdt" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="diachi">Địa chỉ</label>
+                    <input type="text" id="diachi" class="form-control" name="diachi" [(ngModel)]="giaovienDetails.diaChi" readonly>
+                </div>
+            </form>
+            <br>
+        </div>
+        </div>
+        <!--Footer-->
+    <app-footer></app-footer>
+  
+</div>  

@@ -1,0 +1,22 @@
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+.not-found-exit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0vh;
+}
+.not-found,
+.not-found-exit {
+    margin: 0;
+    font-size: 25px; 
+    font-family: 'Arial', sans-serif;
+}
+.not-found h3{
+    font-size: 30px; 
+    font-family: 'Arial', sans-serif;
+}

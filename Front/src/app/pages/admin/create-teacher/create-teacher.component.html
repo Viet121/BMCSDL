@@ -1,0 +1,55 @@
+<!--Main wrapper-->
+<div id="main-wrapper">
+
+    <!--Nav header-->
+    <app-nav-header></app-nav-header>
+
+    <!--Header-->
+    <app-header></app-header>
+
+    <!--Sidebar-->
+    <app-sidebar></app-sidebar>
+    
+    <!--Content body-->
+        <div class="content-body">
+        <div class="container-fluid">
+            <h1 style="font-size: 40px; font-family: 'Arial', sans-serif; text-align: center;">Thêm giáo viên</h1>
+            <form #from="ngForm" (ngSubmit)="addGiaoVien()">
+                <div class="form-group">
+                    <label for="hoten">Họ tên giáo viên</label>
+                    <input type="text" id="hoten" class="form-control" name="hoten" [(ngModel)]="addGiaoVienRequest.tenGV"
+                    required placeholder="Mời nhập họ tên sinh viên">
+                </div>
+                <div class="form-group">
+                    <label for="ngaysinh">Ngày sinh</label>
+                    <input type="date" id="ngaysinh" class="form-control" name="ngaysinh" [(ngModel)]="addGiaoVienRequest.ngaySinh"
+                    required placeholder="Mời nhập ngày sinh">
+                </div>
+                <div class="form-group">
+                    <label for="ngaysinh">Giới tính</label>
+                    <select id="gioiT" name="gioiT" class="form-control" [(ngModel)]="addGiaoVienRequest.gioiTinh">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                        <option value="Khác">Khác</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sdt">Số điện thoại</label>
+                    <input type="text" id="sdt" class="form-control" name="sdt" [(ngModel)]="addGiaoVienRequest.sdt"
+                    required placeholder="Mời nhập số điện thoại">
+                </div>
+                <div class="form-group">
+                    <label for="diachi">Địa chỉ</label>
+                    <input type="text" id="diachi" class="form-control" name="diachi" [(ngModel)]="addGiaoVienRequest.diaChi"
+                    required placeholder="Mời nhập địa chỉ">
+                </div>
+                <button name="submit" class="btn btn-primary" [disabled]="!from.form.valid">Thêm giáo viên</button>
+            </form>
+            <br>
+        </div>
+        </div>
+    <!--Footer-->
+    <app-footer></app-footer>
+  
+</div>
+

@@ -1,0 +1,44 @@
+.card_content {
+    /*display: none;*/
+    margin-top: 1rem;
+    text-align: justify;
+}
+.card_content p{
+  font-size: 20px; 
+  font-family: 'Arial', sans-serif;
+}
+.cards {
+    padding: 0 1.5rem;
+    flex: 1;
+    background: white;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    text-align: center;
+}
+.card_day{
+  text-align: right;
+}
+.card_day p{
+  font-size: 10px; 
+  font-family: 'Arial', sans-serif;
+}
+.question{
+  margin-top: 1rem;
+}
+.question h3{
+  font-size: 20px; 
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+.card_btn{
+  text-align: right;
+}
+.card_btn-none{
+  background-color: white; /* Màu nền của button */
+  color: #000000; /* Màu chữ của button */
+  padding: 5px 20px; /* Kích thước padding của button */
+  border: none; /* Loại bỏ viền của button */
+  cursor: pointer;
+  border-radius: 2rem;
+}

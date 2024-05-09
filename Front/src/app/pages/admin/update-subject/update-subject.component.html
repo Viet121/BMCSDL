@@ -1,0 +1,50 @@
+<!--Main wrapper-->
+<div id="main-wrapper">
+
+    <!--Nav header-->
+    <app-nav-header></app-nav-header>
+
+    <!--Header-->
+    <app-header></app-header>
+
+    <!--Sidebar-->
+    <app-sidebar></app-sidebar>
+    
+    <!--Content body-->
+        <div class="content-body grid-container">
+        <div class="container-fluid">
+            <h1 style="font-size: 40px; font-family: 'Arial', sans-serif; text-align: center;">Chỉnh sửa thông tin môn học</h1>
+            <form #from="ngForm" (ngSubmit)="updateMonHoc()"> 
+                <div class="form-group">
+                    <label for="masv">Mã môn học</label>
+                    <input type="text" id="masv" class="form-control" name="masv" [(ngModel)]="monhocDetails.maMH" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="hoten">Tên môn học</label>
+                    <input type="text" id="hoten" class="form-control" name="hoten" [(ngModel)]="monhocDetails.tenMH">
+                </div>
+                <div class="form-group">
+                    <label for="tinmon">Số tín chỉ</label>
+                    <select id="tinmon" name="tinmon" class="form-control" [(ngModel)]="monhocDetails.soTinChiMH">
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mactdt">Mã chương trình đào tạo</label>
+                    <input type="text" id="mactdt" class="form-control" name="mactdt" [(ngModel)]="monhocDetails.maCTDT"
+                    value="CNTT_47" readonly>
+                </div>
+            <button name="submit" class="btn btn-primary">Cập nhật thông tin</button>
+            </form>
+            <br>
+        </div>
+        </div>
+    <!--Footer-->
+    <app-footer></app-footer>
+  
+</div>      

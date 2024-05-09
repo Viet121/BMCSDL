@@ -1,0 +1,35 @@
+  <!--Main wrapper-->
+  <div id="main-wrapper">
+
+    <!--Nav header-->
+    <app-nav-header></app-nav-header>
+
+    <!--Header-->
+    <app-header></app-header>
+    
+    <!--Sidebar-->
+    <app-sidebar-teacher></app-sidebar-teacher>
+    
+    <!--Content body-->
+    <div class="content-body grid-container">
+    <div class="container-fluid">
+
+      <div *ngFor="let cmt of cmts">
+        <div class="cards">
+          <div class="card_content" >
+            <p style="font-size: 20px; font-family: 'Arial', sans-serif;">{{cmt.noiDung}}</p>
+          </div>
+          <div class="card_day">
+            <p style="font-size: 10px; font-family: 'Arial', sans-serif;">{{cmt.ngayCMT| date:'dd/MM/yyyy'}}</p>
+          </div>
+        </div>
+        <br>
+      </div>
+
+    </div>
+    </div>
+  
+    <!--Footer-->
+    <app-footer></app-footer>
+    
+</div>

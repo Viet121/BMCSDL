@@ -1,0 +1,19 @@
+<div class="form-container">
+    <form [formGroup]="changePassForm">
+       <h3>đổi mật khẩu</h3>
+       <input type="text" formControlName="email" required placeholder="Nhập mã số">
+       <small *ngIf="changePassForm.controls['email'].dirty && changePassForm.hasError('required','email')" class="text-danger">*Tài khoản là bắt buộc</small>
+
+       <input type="password" formControlName="password" required placeholder="Nhập mật khẩu cũ">
+       <small *ngIf="changePassForm.controls['password'].dirty && changePassForm.hasError('required','password')" class="text-danger">*Mật khẩu là bắt buộc</small>
+
+       <input type="password" formControlName="passwordnew" required placeholder="Nhập mật khẩu mới">
+       <small *ngIf="changePassForm.controls['passwordnew'].dirty && changePassForm.hasError('required','passwordnew')" class="text-danger">*Mật khẩu là bắt buộc</small>
+
+       <input type="password" formControlName="passwordnew2" required placeholder="Xác nhận lại mật khẩu mới">
+       <small *ngIf="changePassForm.controls['passwordnew2'].dirty && changePassForm.hasError('required','passwordnew2')" class="text-danger">*Mật khẩu là bắt buộc</small>
+       <br>
+
+       <button (click)="changePass()" type="submit" name="submit" class="btn solid" >Thực hiện</button>
+    </form>
+ </div> 

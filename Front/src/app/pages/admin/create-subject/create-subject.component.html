@@ -1,0 +1,55 @@
+<!--Main wrapper-->
+<div id="main-wrapper">
+
+    <!--Nav header-->
+    <app-nav-header></app-nav-header>
+
+    <!--Header-->
+    <app-header></app-header>
+
+    <!--Sidebar-->
+    <app-sidebar></app-sidebar>
+    
+    <!--Content body-->
+        <div class="content-body grid-container">
+        <div class="container-fluid">
+            <h1 style="font-size: 40px; font-family: 'Arial', sans-serif; text-align: center;">Thêm môn học</h1>
+            <div *ngIf="maMHExists" class="alert alert-danger" role="alert">
+                Mã môn học đã tồn tại!
+            </div>
+            <form #from="ngForm" (ngSubmit)="addMonHoc()">
+                <div class="form-group">
+                    <label for="mamon">Mã môn học</label>
+                    <input type="text" id="mamon" class="form-control" name="mamon" [(ngModel)]="addMonHocRequest.maMH"
+                    required placeholder="Mời nhập mã môn học">
+                </div>
+                <div class="form-group">
+                    <label for="tenmon">Tên môn học</label>
+                    <input type="text" id="tenmon" class="form-control" name="tenmon" [(ngModel)]="addMonHocRequest.tenMH"
+                    required placeholder="Mời nhập tên môn học">
+                </div>
+                <div class="form-group">
+                    <label for="tinmon">Số tín chỉ</label>
+                    <select id="tinmon" name="tinmon" class="form-control" [(ngModel)]="addMonHocRequest.soTinChiMH">
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mactdt">Mã chương trình đào tạo</label>
+                    <input type="text" id="mactdt" class="form-control" name="mactdt" [(ngModel)]="addMonHocRequest.maCTDT"
+                     readonly>
+                </div>
+                <button name="submit" class="btn btn-primary" [disabled]="!from.form.valid">Thêm môn học</button>
+            </form>
+            <br>
+        </div>
+        </div>
+          
+        <!--Footer-->
+        <app-footer></app-footer>
+  
+</div>

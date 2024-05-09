@@ -1,0 +1,17 @@
+.card_content {
+    /*display: none;*/
+    margin-top: 1rem;
+    text-align: justify;
+}
+.cards {
+    padding: 0 1.5rem;
+    flex: 1;
+    background: white;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    text-align: center;
+}
+.card_day{
+  text-align: right;
+}

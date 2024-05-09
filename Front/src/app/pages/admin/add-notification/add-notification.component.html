@@ -1,0 +1,26 @@
+<div mat-dialog-title>
+    <h1>Thông báo</h1>
+</div>
+<form [formGroup]="addNotification" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content-notification">
+        <div class="row">
+            <mat-form-field appearance="outline" class="content-full-width">
+                <mat-label>Tiêu đề</mat-label>
+                <input matInput type="text" formControlName="tieuDe">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+              <mat-label>Nội dung</mat-label>
+              <textarea matInput type="text" formControlName="noiDung"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <span style="font-size: 10px; color: white ">*Lưu ý: Dòng này chủ yếu để kéo độ dài của component này khi đc gọi dialog, tại chỉnh css 0 đc.</span>
+        </div>       
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Hủy</button>
+        <button mat-raised-button color="primary" type="submit">Lưu</button>
+    </div>
+</form>

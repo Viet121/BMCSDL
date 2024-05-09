@@ -1,0 +1,70 @@
+<!--Main wrapper-->
+<div id="main-wrapper">
+
+    <!--Nav header-->
+    <app-nav-header></app-nav-header>
+
+    <!--Header-->
+    <app-header></app-header>
+
+    <!--Sidebar-->
+    <app-sidebar></app-sidebar>
+    
+    <!--Content body-->
+        <div class="content-body">
+        <div class="container-fluid">
+            <h1 style="font-size: 40px; font-family: 'Arial', sans-serif; text-align: center;">Thêm Lớp Học Phần</h1> 
+            <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                {{ errorMessage }}
+            </div>
+            <form #from="ngForm" (ngSubmit)="addLopHocPhan()">
+                <div class="form-group">
+                    <label for="malhp">Mã Lớp Học Phần</label>
+                    <input type="text" id="malhp" class="form-control" name="malhp" [(ngModel)]="addLopHocPhanRequest.maLHP"
+                    required placeholder="Mời nhập mã lớp học phần">
+                </div>
+                <div class="form-group">
+                    <label for="mamh">Mã Môn Học</label>
+                    <select id="mamh" name="mamh" class="form-control"  [(ngModel)]="addLopHocPhanRequest.maMH">
+                        <option *ngFor="let monhoc of monhocs" [value]="monhoc.maMH">{{monhoc.maMH}} - {{monhoc.tenMH}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="magv">Mã Giáo Viên</label>
+                    <select id="magv" name="magv" class="form-control" [(ngModel)]="addLopHocPhanRequest.maGV">
+                        <option *ngFor="let giaovien of giaoviens" [value]="giaovien.maGV">{{giaovien.maGV}} - {{giaovien.tenGV}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="thu">Thứ</label>
+                    <select id="thu" name="thu" class="form-control" [(ngModel)]="addLopHocPhanRequest.thu">
+                        <option value="Thứ hai">Thứ hai</option>
+                        <option value="Thứ ba">Thứ ba</option>
+                        <option value="Thứ tư">Thứ tư</option>
+                        <option value="Thứ năm">Thứ năm</option>
+                        <option value="Thứ sáu">Thứ sáu</option>
+                        <option value="Thứ bảy">Thứ bảy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="caday">Ca Dạy</label>
+                    <select id="caday" name="caday" class="form-control" [(ngModel)]="addLopHocPhanRequest.gio">
+                        <option value="6h30 đến 11h40">6h30 đến 11h40</option>
+                        <option value="12h30 đến 17h40">12h30 đến 17h40</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="soluong">Số Lượng</label>
+                    <input type="number" id="soluong" class="form-control" name="soluong" [(ngModel)]="addLopHocPhanRequest.soLuong"
+                    required placeholder="Mời nhập số lượng sinh viên">
+                </div>
+                <button name="submit" class="btn btn-primary" [disabled]="!from.form.valid">Thêm lớp học phần</button>
+            </form>
+            <br>
+        </div>
+        </div>
+  
+        <!--Footer-->
+        <app-footer></app-footer>
+  
+</div>

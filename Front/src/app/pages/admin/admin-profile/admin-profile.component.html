@@ -1,0 +1,78 @@
+  <!--Main wrapper-->
+  <div id="main-wrapper">
+
+    <!--Nav header-->
+    <app-nav-header></app-nav-header>
+
+    <!--Header-->
+    <app-header></app-header>
+    
+    <!--Sidebar-->
+    <app-sidebar></app-sidebar>
+    
+    <!--Content body-->
+    <div class="content-body grid-container">
+    <div class="container-fluid">
+            <h1 class="title">Thông tin cá nhân</h1>
+            <div class="section-container">
+              <div class="section__pic-container">
+                <img
+                    src="assets/img/man (1).png"
+                  alt="Profile picture"
+                  class="about-pic"
+                />
+              </div>
+              <div class="about-details-container">
+                <div class="about-containers">
+                  <div class="details-container">
+                    <h3>Thông tin admin</h3>
+                    <p>
+                      <strong>Mã admin:</strong> 
+                      <br>
+                      <strong>Tên admin:</strong> Phòng Đào Tạo
+                      <br>
+                      <strong>Ngày sinh:</strong> 
+                      <br>
+                      <strong>Giới tính:</strong> 
+                    </p>
+                  </div>
+                  <div class="details-container">
+                    <h3>Thông tin liên lạc</h3>
+                    <p>
+                      <strong>Số điện thoại:</strong> 
+                      <br>
+                      <strong>Địa chỉ:</strong> 
+                    </p>
+                  </div>
+                </div>
+                <div class="text-container">
+                  <div class="menu-items" style="float:right">
+                    <ul class="nav-links">
+                    <li><a>
+                        <i class="uil uil-sync"></i>
+                        <span class="link-name">Cập nhật thông tin</span>
+                    </a></li>
+                    </ul>
+                  </div>
+                </div>
+                <br>
+                <div class="text-container">
+                  <div class="menu-items" style="float:right">
+                    <ul class="nav-links">
+                      <li><a routerLink="/change-pass">
+                        <i class="uil uil-padlock"></i>
+                        <span class="link-name">Đổi mật khẩu</span>
+                      </a></li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+    </div>
+    </div>
+  
+    <!--Footer-->
+    <app-footer></app-footer>
+    
+</div>

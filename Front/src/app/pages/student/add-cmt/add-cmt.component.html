@@ -1,0 +1,22 @@
+<div mat-dialog-title>
+    <h1>Nhận xét</h1>
+</div>
+<form [formGroup]="addCmtForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content-cmt">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Nhận xét</mat-label>
+                <input matInput #noiDung maxlength="100" type="text" formControlName="noiDung">
+                <mat-hint align="start"></mat-hint>
+                <mat-hint align="end">{{noiDung.value.length}} / 100</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <span style="font-size: 10px; color: red ">*Lưu ý: Các nhận xét, đánh giá, góp ý về lớp học sẽ được lưu lại và không thể xóa hay chỉnh sửa.</span>
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Hủy</button>
+        <button mat-raised-button color="primary" type="submit">Lưu</button>
+    </div>
+</form>

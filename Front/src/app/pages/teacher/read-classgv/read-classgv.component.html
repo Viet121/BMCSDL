@@ -1,0 +1,111 @@
+<!--Main wrapper-->
+<div id="main-wrapper">
+
+    <!--Nav header-->
+    <app-nav-header></app-nav-header>
+  
+    <!--Header-->
+    <app-header></app-header>
+  
+    <!--Sidebar-->
+    <app-sidebar-teacher></app-sidebar-teacher>
+    
+    <!--Content body-->
+          <div class="content-body grid-container">
+          <div class="container-fluid">
+              <h1 style="font-size: 40px; font-family: 'Arial', sans-serif; text-align: center;">Chi tiết lớp học phần</h1>
+                  <div class="table-responsive">
+                      <div class="table-wrapper">
+                        <div class="table-title">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <h4>Chi tiết lớp, ca dạy:</h4>
+                            </div>
+                          </div>
+                        </div>
+                        <table class="table table-striped table-hover table-bordered table-content">
+                          <thead>
+                            <tr class="center-align">
+                              <th>Mã lớp học phần</th>
+                              <th>Mã môn học</th>
+                              <th>Môn học</th>
+                              <th>Thứ</th>
+                              <th>Giờ</th>
+                            </tr>
+                          </thead>
+                          <tbody> 
+                            <tr class="center-align" >
+                              <td>{{lophocphanDetails.maLHP}}</td>
+                              <td>{{lophocphanDetails.maMH}}</td>
+                              <td>{{ lophocphanDetails.tenMH}}</td>
+                              <td>{{lophocphanDetails.thu}}</td>
+                              <td>{{lophocphanDetails.gio}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="table-title">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <h4>Thống kê:</h4>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="width: 600px;">
+                      <canvas id="myChart"></canvas>
+                    </div>
+                    <br>
+                    <div class="table-responsive">
+                      <div class="table-wrapper">
+                        <div class="table-title">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <h4>Chi tiết sinh viên:</h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div style="text-align: right;">
+                          <button (click)="exportexcel()" class="btn btn-outline-success">
+                            Download File
+                          </button>
+                        </div>
+                        <table class="table table-striped table-hover table-bordered table-content" id="table-data">
+                          <thead>
+                            <tr class="center-align">
+                              <th>Mã lớp học phần</th>
+                              <th>Môn học</th>
+                              <th>Mã sinh viên</th>
+                              <th>Tên sinh viên</th>
+                              <th>Điểm</th>
+                              <th>Tùy chọn</th>
+                            </tr>
+                          </thead>
+                          <tbody> 
+                            <tr class="center-align" *ngFor="let lophocphan of lophocphansvs" >
+                              <td>{{lophocphan.maLHP}}</td>
+                              <td>{{ lophocphan.tenMH}}</td>
+                              <td>{{lophocphan.maSV}}</td>
+                              <td>{{lophocphan.tenSV}}</td>
+                              <td>
+                                <span *ngIf="!lophocphan.isEditing">{{ lophocphan.diem }}</span>
+                                <input *ngIf="lophocphan.isEditing" type="text" class="form-control" [(ngModel)]="lophocphan.diem" />
+                              </td>
+                              <td>
+                                <button type="button" class="btn" *ngIf="!lophocphan.isEditing" (click)="lophocphan.isEditing = true"><i class="fa fa-edit edit"></i></button>
+                                <button type="button" class="btn" *ngIf="lophocphan.isEditing" (click)="updateDiem(lophocphan); lophocphan.isEditing = false"><i class="fas fa-save view"></i></button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>      
+          </div>
+          </div>
+    <!--Footer-->
+      <app-footer></app-footer>
+    
+  </div>   
+  
+  
